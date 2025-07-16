@@ -7,7 +7,7 @@ import Blog from "./pages/blog";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import Login from "./pages/login";
-import Userauthroute from "./utils/auth/userauthroute";
+import Userauthroute from "./utils/auth/Userauthroute";
 function App() {
   return (
     <Router>

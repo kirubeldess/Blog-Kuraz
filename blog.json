@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "title": "The Rise of AI",
+      "author": "Abebe Kebede",
+      "date": "2024-07-16",
+      "content": "Artificial Intelligence is rapidly changing the world as we know it. From self-driving cars to personalized medicine, the possibilities are endless. In this post, we explore the latest advancements and what they mean for our future."
+    },
+    {
+      "id": 2,
+      "title": "A Guide to Healthy Eating",
+      "author": "Kebede ",
+      "date": "2024-07-15",
+      "content": "Eating healthy doesn't have to be complicated. This guide provides simple tips and tricks for incorporating more nutritious foods into your diet. Learn about the benefits of a balanced diet and discover delicious recipes to get you started."
+    },
+    {
+      "id": 3,
+      "title": "The Art of Mindfulness",
+      "author": "Saul goodman",
+      "date": "2024-07-14",
+      "content": "In our fast-paced world, finding moments of peace can be challenging. Mindfulness is a powerful practice that can help reduce stress and improve overall well-being. This article introduces the basics of mindfulness and offers practical exercises to help you cultivate a more present and peaceful life."
+    }
+  ]

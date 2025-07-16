@@ -10,7 +10,7 @@ function Navbar() {
       <div className="flex items-center space-x-6">
         <Link to="/blog" className="text-gray-600 hover:text-blue-500 transition duration-300">Blog</Link>
         <Link to="/about" className="text-gray-600 hover:text-blue-500 transition duration-300">About</Link>
-        <Link to="/contact" className="text-gray-600 hover:text-blue-500 transition duration-300">Contact</Link>
+        {/* <Link to="/contact" className="text-gray-600 hover:text-blue-500 transition duration-300">Contact</Link> */}
         <button className="px-5 py-2 text-white bg-blue-600 rounded-full font-semibold text-sm hover:bg-blue-700 transition">
           Log In
         </button>
