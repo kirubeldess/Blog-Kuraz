@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import users from "../data/users"; 
+import users from "../data/users";
 
 export default function Login() {
-  const navigate = useNavigate();
-
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,8 +25,8 @@ export default function Login() {
         }
 
       setTimeout(() => {
-        localStorage.setItem("authuser",JSON.stringify(user))
-        navigate("/blog");
+        localStorage.setItem("authuser",JSON.stringify(user));
+        window.location.href = "/blog";
       }, 1000);
     } else {
       setMessage("❌ Incorrect username, email, or password.");

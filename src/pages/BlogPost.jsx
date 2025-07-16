@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import blogs from '../../blog.json';
 
 function BlogPost() {
   const { id } = useParams();
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    const blogPost = blogs.find((p) => p.id === parseInt(id));
-    setPost(blogPost);
+    const storedBlogs = JSON.parse(localStorage.getItem('blogs'));
+    if (storedBlogs) {
+      const blogPost = storedBlogs.find((p) => p.id === parseInt(id));
+      setPost(blogPost);
+    }
   }, [id]);
 
   if (!post) {

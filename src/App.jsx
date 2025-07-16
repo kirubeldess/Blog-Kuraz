@@ -7,6 +7,7 @@ import Blog from "./pages/blog";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import Login from "./pages/login";
+import AddBlog from "./pages/AddBlog";
 import Userauthroute from "./utils/auth/Userauthroute";
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route element={<Userauthroute />}>
           <Route path="/blog" element={<Blog />} />
+          <Route path="/add-blog" element={<AddBlog />} />
         </Route>
 
         <Route path="/about" element={<About />} />
