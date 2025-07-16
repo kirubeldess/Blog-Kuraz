@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import initialBlogs from '../../blog.json';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import initialBlogs from "../../blog.json";
 
 function Blog() {
   const [blogPosts, setBlogPosts] = useState([]);
 
   useEffect(() => {
-    const storedBlogs = JSON.parse(localStorage.getItem('blogs'));
+    const storedBlogs = JSON.parse(localStorage.getItem("blogs"));
     if (storedBlogs) {
       setBlogPosts(storedBlogs);
     } else {
-      localStorage.setItem('blogs', JSON.stringify(initialBlogs));
+      localStorage.setItem("blogs", JSON.stringify(initialBlogs));
       setBlogPosts(initialBlogs);
     }
   }, []);
@@ -34,7 +34,9 @@ function Blog() {
                 <p className="text-gray-600 text-sm mb-4">
                   By {post.author} on {post.date}
                 </p>
-                <p className="text-gray-700">{post.content.substring(0, 100)}...</p>
+                <p className="text-gray-700">
+                  {post.content.substring(0, 100)}...
+                </p>
               </div>
             </div>
           </Link>
