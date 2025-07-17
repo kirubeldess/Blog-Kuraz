@@ -6,7 +6,7 @@ function Navbar() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const user = localStorage.getItem('authuser');
+    const user = localStorage.getItem('auths');
     if (user) {
       setIsAuthenticated(true);
     }

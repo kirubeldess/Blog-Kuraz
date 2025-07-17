@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import users from "../data/users";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const users = JSON.parse(localStorage.getItem("users")) || [];
     const user = users.find(
       (u) =>
         u.username === username && u.email === email && u.password === password
@@ -18,15 +20,15 @@ export default function Login() {
     if (user) {
       setMessage("✅ Login successful!");
 
-      const user = {
+      const userAuth = {
         username,
         email,
         isauthenticated: true,
       };
 
+      localStorage.setItem("auths", JSON.stringify(userAuth));
       setTimeout(() => {
-        localStorage.setItem("auths", JSON.stringify(user));
-        window.location.href = "/blog";
+        navigate("/blog");
       }, 1000);
     } else {
       setMessage("❌ Incorrect username, email, or password.");
@@ -92,9 +94,9 @@ export default function Login() {
 
         <p className="text-sm text-center text-gray-600 mt-4">
           Don't have an account?{" "}
-          <a href="/register" className="text-blue-600 hover:underline">
+          <Link to="/signup" className="text-blue-600 hover:underline">
             Register here
-          </a>
+          </Link>
         </p>
       </div>
     </div>
