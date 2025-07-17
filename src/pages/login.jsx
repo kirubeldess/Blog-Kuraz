@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState } from "react";
 import users from "../data/users";
 
@@ -13,20 +12,20 @@ export default function Login() {
 
     const user = users.find(
       (u) =>
-        u.username === username &&
-        u.email === email &&
-        u.password === password
+        u.username === username && u.email === email && u.password === password
     );
 
     if (user) {
       setMessage("✅ Login successful!");
 
       const user = {
-          username,email, isauthenticated:true  
-        }
+        username,
+        email,
+        isauthenticated: true,
+      };
 
       setTimeout(() => {
-        localStorage.setItem("authuser",JSON.stringify(user));
+        localStorage.setItem("auths", JSON.stringify(user));
         window.location.href = "/blog";
       }, 1000);
     } else {
@@ -41,9 +40,7 @@ export default function Login() {
         {message && (
           <p
             className={`text-center mb-4 font-medium ${
-              message.includes("successful")
-                ? "text-green-600"
-                : "text-red-600"
+              message.includes("successful") ? "text-green-600" : "text-red-600"
             }`}
           >
             {message}
@@ -51,7 +48,6 @@ export default function Login() {
         )}
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            
             <input
               type="text"
               className="w-full px-4 py-2 border border-gray-300 rounded-md"
@@ -63,7 +59,6 @@ export default function Login() {
           </div>
 
           <div>
-           
             <input
               type="email"
               className="w-full px-4 py-2 border border-gray-300 rounded-md"
@@ -75,7 +70,6 @@ export default function Login() {
           </div>
 
           <div>
-           
             <input
               type="password"
               className="w-full px-4 py-2 border border-gray-300 rounded-md"
@@ -103,5 +97,3 @@ export default function Login() {
     </div>
   );
 }
-=======
->>>>>>> Elsa
