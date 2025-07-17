@@ -20,15 +20,13 @@ export default function Login() {
     if (user) {
       setMessage("✅ Login successful!");
 
-      const authUser = {
-        username,
-        email,
-        isAuthenticated: true,
-      };
+      const user = {
+          username,email, isauthenticated:true  
+        }
 
       setTimeout(() => {
-        localStorage.setItem("authuser", JSON.stringify(authUser));
-        window.location.href = "/pages/blog"; // Adjust this path as needed
+        localStorage.setItem("authuser",JSON.stringify(user));
+        window.location.href = "/blog";
       }, 1000);
     } else {
       setMessage("❌ Incorrect username, email, or password.");
@@ -53,32 +51,41 @@ export default function Login() {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-5">
-          <input
-            type="text"
-            placeholder="Your Username"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
+          <div>
+            
+            <input
+              type="text"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+              placeholder="your_username"
+            />
+          </div>
 
-          <input
-            type="email"
-            placeholder="you@example.com"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+          <div>
+           
+            <input
+              type="email"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              placeholder="you@example.com"
+            />
+          </div>
 
-          <input
-            type="password"
-            placeholder="••••••••"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+          <div>
+           
+            <input
+              type="password"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              placeholder="••••••••"
+            />
+          </div>
 
           <button
             type="submit"
