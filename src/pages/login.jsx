@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState } from "react";
 import users from "../data/users";
 
@@ -21,13 +20,15 @@ export default function Login() {
     if (user) {
       setMessage("✅ Login successful!");
 
-      const user = {
-          username,email, isauthenticated:true  
-        }
+      const authUser = {
+        username,
+        email,
+        isAuthenticated: true,
+      };
 
       setTimeout(() => {
-        localStorage.setItem("authuser",JSON.stringify(user));
-        window.location.href = "/blog";
+        localStorage.setItem("authuser", JSON.stringify(authUser));
+        window.location.href = "/pages/blog"; // Adjust this path as needed
       }, 1000);
     } else {
       setMessage("❌ Incorrect username, email, or password.");
@@ -38,6 +39,7 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
         <h2 className="text-3xl font-bold text-center mb-6">Welcome Back 👋</h2>
+
         {message && (
           <p
             className={`text-center mb-4 font-medium ${
@@ -49,42 +51,34 @@ export default function Login() {
             {message}
           </p>
         )}
+
         <form onSubmit={handleSubmit} className="space-y-5">
-          <div>
-            
-            <input
-              type="text"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-              placeholder="your_username"
-            />
-          </div>
+          <input
+            type="text"
+            placeholder="Your Username"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
 
-          <div>
-           
-            <input
-              type="email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              placeholder="you@example.com"
-            />
-          </div>
+          <input
+            type="email"
+            placeholder="you@example.com"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-          <div>
-           
-            <input
-              type="password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="••••••••"
-            />
-          </div>
+          <input
+            type="password"
+            placeholder="••••••••"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
           <button
             type="submit"
@@ -93,6 +87,7 @@ export default function Login() {
             Log In
           </button>
         </form>
+
         <p className="text-sm text-center text-gray-600 mt-4">
           Don't have an account?{" "}
           <a href="/register" className="text-blue-600 hover:underline">
@@ -103,5 +98,3 @@ export default function Login() {
     </div>
   );
 }
-=======
->>>>>>> Elsa
